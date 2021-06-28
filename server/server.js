@@ -3,6 +3,8 @@ const app = express();
 const bodyParser = require( 'body-parser' );
 const PORT = 5000;
 
+const allJokes = [];
+
 // use bodyParser.urlencoded throughout the app with this:
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -33,6 +35,23 @@ let jokes = [
     punchLine: "It was a shih tzu."
   }
 ];
+
+app.post('/allJokes', (req, res) => {
+  console.log('body', req.body);
+  let joke = req.body.joke;
+
+ })
+
+ allJokes.push({
+  whoseJoke: (req.body.whoseJoke),
+  jokeQuestion: (req.body.jokeQuestion),
+  punchLine: (req.body.punchLine)
+});
+res.sendStatus(201);
+
+ app.get('/allJokes', (req, res) => {
+   res.send(jokes);
+ })
 
 // serve back static files
 app.use(express.static('server/public'));
