@@ -17,9 +17,9 @@ function onAddJoke(){
         method: 'POST',
         url: '/allJokes',
         data: {
-            whoseJoke: $('whoseJoke').val(),
-            jokeQuestion: $('whoseJoke').val(),
-            punchLine: $('punchLine').val(),
+            whoseJokeIn: $('whoseJokeIn').val(),
+            jokeQuestionIn: $('questionIn').val(),
+            punchLineIn: $('punchLineIn').val(),
         }
     })
     .then(res => {
@@ -40,6 +40,17 @@ function getJokes(){
         console.log('GET', res);
 
         let lastJokes = res[res.length - 1];
-        $('#')
+        
+        
+        $('#outputDiv').empty();
+        for (let joke of res) {
+            $('#outputDiv').append(`
+            <div>
+                ${joke.whoseJokeIn}
+                ${joke.questionIn}
+                ${joke.punchlineIn}
+            </div>
+            `)
+        }
     })
 }

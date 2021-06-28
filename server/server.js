@@ -43,9 +43,9 @@ app.post('/allJokes', (req, res) => {
  })
 
  allJokes.push({
-  whoseJoke: (req.body.whoseJoke),
-  jokeQuestion: (req.body.jokeQuestion),
-  punchLine: (req.body.punchLine)
+  whoseJokeIn: (req.body.whoseJokeIn),
+  jokeQuestionIn: (req.body.questionIn),
+  punchLineIn: (req.body.punchLineIn)
 });
 res.sendStatus(201);
 
