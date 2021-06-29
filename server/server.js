@@ -36,18 +36,18 @@ let jokes = [
   }
 ];
 
-app.post('/allJokes', (req, res) => {
-  console.log('body', req.body);
-  let joke = req.body.joke;
+// app.post('/allJokes', (req, res) => {
+//   console.log('body', req.body);
+//   // let joke = req.body.alljokes;
 
- })
+//  })
 
- allJokes.push({
-  whoseJokeIn: (req.body.whoseJokeIn),
-  jokeQuestionIn: (req.body.questionIn),
-  punchLineIn: (req.body.punchLineIn)
-});
-res.sendStatus(201);
+//  allJokes.push({
+//   whoseJokeIn: (req.body.whoseJokeIn),
+//   jokeQuestionIn: (req.body.questionIn),
+//   punchLineIn: (req.body.punchLineIn)
+// });
+// res.sendStatus(201);
 
  app.get('/allJokes', (req, res) => {
    res.send(jokes);

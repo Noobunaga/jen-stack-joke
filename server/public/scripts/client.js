@@ -7,19 +7,19 @@ function onReady() {
 
     getJokes();
 
-    $('#addJokeButton').on('click', onAddJoke)
+    $('#addJokeButton').on('click', addJoke)
 }
 
-function onAddJoke(){
+function addJoke(){
     console.log('added');
 
-    $.ajax({
+    $.ajax({    
         method: 'POST',
         url: '/allJokes',
         data: {
-            whoseJokeIn: $('whoseJokeIn').val(),
-            jokeQuestionIn: $('questionIn').val(),
-            punchLineIn: $('punchLineIn').val(),
+            whoseJokeIn: $('#whoseJokeIn').val(),
+            jokeQuestionIn: $('#questionIn').val(),
+            punchLineIn: $('#punchLineIn').val(),
         }
     })
     .then(res => {
