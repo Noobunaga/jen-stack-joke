@@ -36,13 +36,13 @@ let jokes = [
   }
 ];
 
-// app.post('/allJokes', (req, res) => {
-//   console.log('body', req.body);
-//   // let joke = req.body.alljokes;
+app.post('/allJokes', (req, res) => {
+  console.log(jokes);
+  // let joke = req.body.alljokes;
+ })
 
-//  })
 
-//  allJokes.push({
+//  jokes.push({
 //   whoseJokeIn: (req.body.whoseJokeIn),
 //   jokeQuestionIn: (req.body.questionIn),
 //   punchLineIn: (req.body.punchLineIn)
