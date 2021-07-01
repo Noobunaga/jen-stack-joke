@@ -37,17 +37,18 @@ let jokes = [
 ];
 
 app.post('/allJokes', (req, res) => {
-  console.log(jokes);
-  // let joke = req.body.alljokes;
+  console.log(req.body);
+  
+  jokes.push( req.body //only req.body is needed and not other lines
+    // whoseJoke: (req.body.whoseJoke),
+    // jokeQuestion: (req.body.jokeQuestion),
+    // punchLine: (req.body.punchLine)
+  );
+  res.sendStatus(201);
  })
 
 
-//  jokes.push({
-//   whoseJokeIn: (req.body.whoseJokeIn),
-//   jokeQuestionIn: (req.body.questionIn),
-//   punchLineIn: (req.body.punchLineIn)
-// });
-// res.sendStatus(201);
+
 
  app.get('/allJokes', (req, res) => {
    res.send(jokes);

@@ -17,17 +17,16 @@ function addJoke(){
         method: 'POST',
         url: '/allJokes',
         data: {
-            whoseJokeIn: $('#whoseJokeIn').val(),
-            jokeQuestionIn: $('#questionIn').val(),
-            punchLineIn: $('#punchLineIn').val(),
+            whoseJoke: $('#whoseJokeIn').val(),
+            jokeQuestion: $('#questionIn').val(),
+            punchLine: $('#punchLineIn').val(),
         }
-    // })
-    // .then(res => {
-    //     console.log('POST res', res);
-
-    // })
-    // .catch(err => {
-    //     console.error('POST failed', err);
+    })
+    .then(() => {
+        getJokes();
+    })
+    .catch(err => {
+        console.error('POST failed', err);
      })
 }
 
@@ -36,21 +35,20 @@ function getJokes(){
         method: 'GET',
         url: '/allJokes'
     })
-    // .then(res => {
-    //     console.log('GET', res);
-
-    //     let lastJokes = res[res.length - 1];
+    .then(res => {
+        console. log('GET', res);
+    
+        let lastJokes = res[res.length - 1];
         
-        
-    //     $('#outputDiv').empty();
-    //     for (let joke of res) {
-    //         $('#outputDiv').append(`
-    //         <div>
-    //             ${joke.whoseJokeIn}
-    //             ${joke.questionIn}
-    //             ${joke.punchlineIn}
-    //         </div>
-    //         `)
-    //     }
-    // })
+        $('#outputDiv').empty();
+        for (let joke of res) {
+            $('#outputDiv').append(`
+            <div>
+                ${joke.whoseJoke}
+                ${joke.jokeQuestion}
+                ${joke.punchLine}
+            </div>
+            `)
+        }
+    })
 }
